@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/default.xhtml">
+        <ui:define name="content">
+                <h:form id="artistform">
+                        
+                <f:facet name="header">Wpisz numer płyty, którą chcesz usunąć:</f:facet><br/><br/>
+                <h:outputText value="Numer płyty:" />
+                                <h:inputText id="number" value="#{artistBean.artist.number}" required="#{true}" />
+                      <br/><br/>
+
+                        <h:commandButton value="Zatwierdź usunięcie"
+                                action="#{artistBean.deleteArtistA}" />
+
+                        <h:panelGrid>
+                                <h:messages showDetail="#{true}" showSummary="#{false}" />
+                        </h:panelGrid>
+                </h:form>
+        </ui:define>
+</ui:composition>

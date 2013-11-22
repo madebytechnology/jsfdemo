@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/default.xhtml">
+        <ui:define name="content">
+                <h:form id="artistform">
+                       
+ <f:facet name="header">Wpisz artystę, którego chcesz znaleźć:</f:facet><br/><br/>
+ <h:outputText value="Artysta: " />
+<h:inputText id="name" value="#{artistBean.artist.name}" required="#{true}"/>
+                 <br/><br/>
+ <h:commandButton value="Zatwierdź" action="#{artistBean.searchArtistA}" />
+
+ <h:panelGrid>
+<h:messages showDetail="#{true}" showSummary="#{false}" />
+</h:panelGrid>
+                </h:form>
+        </ui:define>
+</ui:composition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html">
+  <div>
+        <h:form>
+          <ul>
+                <li>
+                  <h:commandLink action="home?faces-redirect=true">
+                        <h:outputText value="Strona główna" />
+                  </h:commandLink>
+                </li>
+                
+                <li>
+                  <h:commandLink action="addArtist?faces-redirect=true">
+                        <h:outputText value="Dodaj artystę" />
+                  </h:commandLink>
+                </li>
+                
+                 <li>
+                  <h:commandLink action="findArtist?faces-redirect=true">
+                         <h:outputText value="Znajdź artystę" />
+                  </h:commandLink>
+                </li>
+                
+                 <li>
+                  <h:commandLink action="deleteArtist?faces-redirect=true">
+                         <h:outputText value="Usuń artystę" />
+                  </h:commandLink>
+                </li>
+                        
+                 <li>   
+                  <h:commandLink action="showArtists?faces-redirect=true">
+                         <h:outputText value="Pokaż wszystkich artystów" />
+                  </h:commandLink>
+                </li>
+                
+             
+        </ul>
+   </h:form>
+  </div>
+</ui:composition>

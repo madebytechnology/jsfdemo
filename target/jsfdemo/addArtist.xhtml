@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+	
+		<h:form id="artistform">
+	<br/>
+			<h:outputText value="Nazwa: " />
+				<h:inputText id="name" value="#{artistBean.artist.name}" />
+				<br/><br/>
+
+				<h:outputText value="Rok powstania: " />
+				<h:inputText id="yof" value="#{artistBean.artist.yof}" />
+			    <br/><br/>
+			    
+			    <h:outputText value="Nazwa płyty: " />
+				<h:inputText id="nameofcd" value="#{artistBean.artist.nameofcd}" />
+			    <br/><br/>
+			    
+			     <h:outputText value="Rok wydania płyty: " />
+				<h:inputText id="yop" value="#{artistBean.artist.yop}" />
+			    <br/><br/>
+			    
+			    <h:outputText value="Numer płyty: " />
+				<h:inputText id="checkNumber" value="#{artistBean.artist.number}"
+                 validator="#{artistBean.checkNumber}" required="#{true}">
+                <f:validator validatorId="numberValidator" />
+                  </h:inputText>
+			    <br/><br/>
+			    
+			
+			<h:outputText value="Cena płyty: " />
+				<h:inputText id="price" value="#{artistBean.artist.price}">
+				<f:validateDoubleRange minimum="5.0" maximum="220.0" />
+				</h:inputText>
+<br/><br/>
+
+			<h:commandButton value="Dodaj artystę"
+				action="#{artistBean.addArtist}" /><br/><br/>
+				
+				 <h:panelGrid>
+                                <h:messages showDetail="#{true}" showSummary="#{false}" />
+                        </h:panelGrid>
+							
+						
+		</h:form>
+	</ui:define>
+</ui:composition>
